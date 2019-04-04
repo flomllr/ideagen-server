@@ -29,8 +29,7 @@ let scraper;
   console.log('Scraper ready');
 })();
 
-const port = 8888; //process.env.PORT;
-
+const port = 8888;
 const app = (0, _express.default)();
 app.use((0, _cors.default)());
 app.use(_bodyParser.default.urlencoded({
