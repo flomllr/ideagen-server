@@ -19,7 +19,7 @@ let scraper;
 	console.log('Scraper ready');
 })();
 
-const port = 8888; //process.env.PORT;
+const port = 8888;
 const app = express();
 app.use(cors());
 app.use(
