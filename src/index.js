@@ -10,7 +10,9 @@ const pup = require('puppeteer');
 //dotenv.config();
 let scraper;
 (async () => {
-	const browser = await pup.launch();
+	const browser = await pup.launch({
+		args: ['--no-sandbox', '--disable-setuid-sandbox']
+	});
 	const page = await browser.newPage();
 	await page.goto('https://exposure.cards/randomhunt/');
 	scraper = new Scraper(page);

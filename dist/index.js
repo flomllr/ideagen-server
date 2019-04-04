@@ -20,7 +20,9 @@ const pup = require('puppeteer'); //import dotenv from 'dotenv';
 let scraper;
 
 (async () => {
-  const browser = await pup.launch();
+  const browser = await pup.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   await page.goto('https://exposure.cards/randomhunt/');
   scraper = new _scraper.Scraper(page);
